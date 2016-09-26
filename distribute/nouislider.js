@@ -1,4 +1,4 @@
-/*! nouislider - 8.5.1 - 2016-04-24 16:00:29 */
+/*! nouislider - 8.5.1 - 2016-09-26 06:57:28 */
 
 (function (factory) {
 
@@ -1415,9 +1415,7 @@ function closure ( target, options, originalOptions ){
 		fireEvent('change', handleNumber);
 
 		// If this is a standard handle movement, fire the end event.
-		if ( data.handleNumber !== undefined ) {
-			fireEvent('end', data.handleNumber);
-		}
+		fireEvent('end', data.handleNumber || 2);
 	}
 
 	// Fire 'end' when a mouse or pen leaves the document.
@@ -1494,9 +1492,7 @@ function closure ( target, options, originalOptions ){
 			document.body.addEventListener('selectstart', f, false);
 		}
 
-		if ( data.handleNumber !== undefined ) {
-			fireEvent('start', data.handleNumber);
-		}
+		fireEvent('start', data.handleNumber || 2);
 	}
 
 	// Move closest handle to tapped location.
